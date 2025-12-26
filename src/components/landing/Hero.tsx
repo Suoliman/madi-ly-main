@@ -71,7 +71,7 @@ const Hero = () => {
             <div className="relative z-10 bg-card rounded-2xl shadow-2xl border border-border/50 overflow-hidden p-4">
               {/* Desktop screenshot (visible on lg+) */}
               <div className="hidden lg:block">
-                <img src="/images/pc-screenshot.png" alt="لقطة شاشة سطح المكتب" className="w-full h-auto object-cover" />
+                <img src="/images/pc-screenshot-header.png" alt="لقطة شاشة سطح المكتب" className="w-full h-auto object-cover" />
               </div>
 
               {/* Mobile screenshot (visible on small screens) */}
