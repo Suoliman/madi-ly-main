@@ -12,7 +12,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61585720588802", label: "Facebook" },
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
@@ -63,6 +63,8 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target={social.href?.startsWith('http') ? '_blank' : undefined}
+                  rel={social.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="w-10 h-10 rounded-lg bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
                   aria-label={social.label}
                 >
