@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
+// Logo imported so Vite bundles it
+const logo = new URL("../../../images/logo.png", import.meta.url).href;
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -20,7 +23,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="منصة مادي" className="w-10 h-10 object-cover rounded-lg" />
+            <img src={logo} alt="منصة مادي" className="w-10 h-10 object-cover rounded-lg" />
             <span className="font-bold text-lg md:text-xl text-foreground hidden sm:block">
               منصة مادي
             </span>

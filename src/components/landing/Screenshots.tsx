@@ -1,5 +1,10 @@
 import { Smartphone, Monitor } from "lucide-react";
 
+// Import images so Vite bundles them into dist/assets
+const pcScreenshot = new URL("../../../images/0366.png", import.meta.url).href;
+const mobile1 = new URL("../../../images/IMG_4141.PNG", import.meta.url).href;
+const mobile2 = new URL("../../../images/IMG_4143.PNG", import.meta.url).href;
+
 const Screenshots = () => {
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
@@ -36,7 +41,7 @@ const Screenshots = () => {
                 </div>
               </div>
               <div className="aspect-[16/10] bg-gradient-to-br from-muted to-secondary flex items-center justify-center">
-                <img src={`${import.meta.env.BASE_URL}images/0366.png`} alt="لقطة شاشة لوحة التحكم" className="w-full h-full object-cover" />
+                <img src={pcScreenshot} alt="لقطة شاشة لوحة التحكم" className="w-full h-full object-cover" />
               </div>
             </div>
             {/* Decorative */}
@@ -49,7 +54,7 @@ const Screenshots = () => {
             <div className="relative animate-float" style={{ animationDelay: "0s" }}>
               <div className="w-48 md:w-56 rounded-[2rem] overflow-hidden bg-transparent">
                   <div className="aspect-[9/19]">
-                    <img src={`${import.meta.env.BASE_URL}images/IMG_4141.PNG`} alt="لقطة موبايل 1" className="w-full h-full object-cover bg-transparent" />
+                    <img src={mobile1} alt="لقطة موبايل 1" className="w-full h-full object-cover bg-transparent" />
                 </div>
               </div>
             </div>
@@ -58,7 +63,7 @@ const Screenshots = () => {
             <div className="relative animate-float mt-8" style={{ animationDelay: "0.5s" }}>
               <div className="w-48 md:w-56 rounded-[2rem] overflow-hidden bg-transparent">
                   <div className="aspect-[9/19]">
-                    <img src={`${import.meta.env.BASE_URL}images/IMG_4143.PNG`} alt="لقطة موبايل 2" className="w-full h-full object-cover bg-transparent" />
+                    <img src={mobile2} alt="لقطة موبايل 2" className="w-full h-full object-cover bg-transparent" />
                 </div>
               </div>
               {/* Decorative */}
