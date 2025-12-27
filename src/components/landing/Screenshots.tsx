@@ -36,7 +36,7 @@ const Screenshots = () => {
                 </div>
               </div>
               <div className="aspect-[16/10] bg-gradient-to-br from-muted to-secondary flex items-center justify-center">
-                <img src="/images/0366.png" alt="لقطة شاشة لوحة التحكم" className="w-full h-full object-cover" />
+                <img src={`${import.meta.env.BASE_URL}images/0366.png`} alt="لقطة شاشة لوحة التحكم" className="w-full h-full object-cover" />
               </div>
             </div>
             {/* Decorative */}
@@ -49,7 +49,7 @@ const Screenshots = () => {
             <div className="relative animate-float" style={{ animationDelay: "0s" }}>
               <div className="w-48 md:w-56 rounded-[2rem] overflow-hidden bg-transparent">
                   <div className="aspect-[9/19]">
-                    <img src="/images/IMG_4141.PNG" alt="لقطة موبايل 1" className="w-full h-full object-cover bg-transparent" />
+                    <img src={`${import.meta.env.BASE_URL}images/IMG_4141.PNG`} alt="لقطة موبايل 1" className="w-full h-full object-cover bg-transparent" />
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ const Screenshots = () => {
             <div className="relative animate-float mt-8" style={{ animationDelay: "0.5s" }}>
               <div className="w-48 md:w-56 rounded-[2rem] overflow-hidden bg-transparent">
                   <div className="aspect-[9/19]">
-                    <img src="/images/IMG_4143.PNG" alt="لقطة موبايل 2" className="w-full h-full object-cover bg-transparent" />
+                    <img src={`${import.meta.env.BASE_URL}images/IMG_4143.PNG`} alt="لقطة موبايل 2" className="w-full h-full object-cover bg-transparent" />
                 </div>
               </div>
               {/* Decorative */}

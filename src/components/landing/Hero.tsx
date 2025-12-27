@@ -71,13 +71,13 @@ const Hero = () => {
             <div className="relative z-10 bg-card rounded-2xl shadow-2xl border border-border/50 overflow-hidden p-4">
               {/* Desktop screenshot (visible on lg+) */}
               <div className="hidden lg:block">
-                <img src="/images/pc-screenshot-header.png" alt="لقطة شاشة سطح المكتب" className="w-full h-auto object-cover" />
+                <img src={`${import.meta.env.BASE_URL}images/pc-screenshot.png`} alt="لقطة شاشة سطح المكتب" className="w-full h-auto object-cover" />
               </div>
 
               {/* Mobile screenshot (visible on small screens) */}
               <div className="block lg:hidden flex items-center justify-center">
                 <div className="w-48 md:w-64 rounded-[2rem] overflow-hidden bg-transparent">
-                  <img src="/images/IMG_4141.PNG" alt="لقطة شاشة الموبايل" className="w-full h-auto object-cover bg-transparent" />
+                  <img src={`${import.meta.env.BASE_URL}images/IMG_4141.PNG`} alt="لقطة شاشة الموبايل" className="w-full h-auto object-cover bg-transparent" />
                 </div>
               </div>
             </div>
