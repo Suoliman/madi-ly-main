@@ -44,9 +44,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Button className="gradient-primary text-primary-foreground hover:opacity-90 transition-opacity">
-              ابدأ تجربتك المجانية
-            </Button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWD7VP6qe3se1Vpnt7OgrTc_JjKup3BGnnEVb7Zi1l0C6LvA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+              <Button className="gradient-primary text-primary-foreground hover:opacity-90 transition-opacity">
+                ابدأ تجربتك المجانية
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -77,9 +79,11 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button className="gradient-primary text-primary-foreground hover:opacity-90 transition-opacity mt-4">
-                ابدأ تجربتك المجانية
-              </Button>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWD7VP6qe3se1Vpnt7OgrTc_JjKup3BGnnEVb7Zi1l0C6LvA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                <Button className="gradient-primary text-primary-foreground hover:opacity-90 transition-opacity mt-4">
+                  ابدأ تجربتك المجانية
+                </Button>
+              </a>
             </nav>
           </div>
         )}

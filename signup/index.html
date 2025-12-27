@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>ابدأ تجربتك المجانية | منصة مادي</title>
+    <meta name="description" content="سجّل الآن واحصل على 7 أيام تجربة مجانية مع منصة مادي لحلول التجارة الإلكترونية">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/madi-ly-main/assets/logo-Br-hXktf.png" type="image/png">
+
+    <!-- Cairo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --muted-foreground: #627084;
+            --bg: #f8fafc;
+            --text: #1e3a5f;
+            --error: #ef4444;
+            --success: #10b981;
+            --warning-bg: #fef3c7;
+            --warning-border: #f59e0b;
+            --warning-text: #92400e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.9;
+        }
+
+        /* Mobile nav */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+            min-height: calc(100vh - 60px);
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
+            width: 100%;
+            max-width: 480px;
+        }
+
+        @media (min-width: 480px) {
+            .container {
+                padding: 2.5rem;
+            }
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .title h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .trial-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+
+        .optional-label {
+            font-weight: 400;
+            color: var(--muted-foreground);
+            font-size: 0.8rem;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            padding-right: 2.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            background: white;
+            min-height: 48px;
+            -webkit-appearance: none;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        input::placeholder {
+            color: #94a3b8;
+        }
+
+        .icon {
+            position: absolute;
+            right: 0.875rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
+
+        .helper-text {
+            font-size: 0.8rem;
+            color: var(--muted-foreground);
+            margin-top: 0.4rem;
+        }
+
+        .warning-box {
+            background: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-radius: 10px;
+            padding: 0.875rem;
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            color: var(--warning-text);
+            line-height: 1.5;
+        }
+
+        .warning-box strong {
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .warning-box code {
+            background: rgba(245, 158, 11, 0.2);
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+            font-family: monospace;
+            direction: ltr;
+            display: inline-block;
+            word-break: break-all;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.875rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: inherit;
+            margin-top: 1rem;
+            min-height: 50px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px -5px rgba(59, 130, 246, 0.35);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid white;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .result-message {
+            display: none;
+            padding: 0.875rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .result-message.success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .result-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .trial-notice {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted-foreground);
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/madi-ly-main/" class="logo">
+                <span class="logo-icon">م</span>
+                <span>منصة مادي</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/madi-ly-main/#features">المميزات</a></li>
+                <li><a href="/madi-ly-main/#how-it-works">كيف يعمل</a></li>
+                <li><a href="/madi-ly-main/#pricing">الأسعار</a></li>
+                <li><a href="/madi-ly-main/#faq">الأسئلة الشائعة</a></li>
+                <li><a href="/madi-ly-main/#contact">تواصل معنا</a></li>
+            </ul>
+
+            <a href="/madi-ly-main/" class="nav-cta">الرئيسية</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+        <div class="container">
+            <div class="title">
+                <span class="trial-badge">🎉 تجربة مجانية 7 أيام</span>
+                <h1>ابدأ تجربتك المجانية الآن</h1>
+            </div>
+
+            <form id="registerForm" novalidate>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <div class="input-wrapper">
+                        <span class="icon">✉️</span>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required
+                            aria-required="true">
+                    </div>
+                    <p class="helper-text">سنرسل لك تعليمات البدء على هذا البريد.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="sheetUrl">
+                        رابط Google Sheet
+                        <span class="optional-label">(اختياري)</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <span class="icon">🔗</span>
+                        <input type="url" id="sheetUrl" name="sheetUrl"
+                            placeholder="https://docs.google.com/spreadsheets/d/...">
+                    </div>
+                    <div class="warning-box">
+                        <strong>⚠️ ملاحظة:</strong>
+                        إذا أضفت شيت، شاركه مع: <code>madi4bsns@gmail.com</code>
+                    </div>
+                </div>
+
+                <div id="resultMessage" class="result-message" role="alert"></div>
+
+                <button type="submit" id="submitBtn">
+                    <span class="spinner" id="spinner"></span>
+                    <span id="btnText">ابدأ التجربة المجانية</span>
+                </button>
+            </form>
+
+            <p class="trial-notice">
+                بعد انتهاء الـ 7 أيام، ستحتاج للاشتراك لمتابعة الخدمة.
+            </p>
+        </div>
+    </main>
+
+    <script>
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbywqpPESgQkIEHxGJgYe_y-nNXrKczfK3oVb-9PSWwsPgJO8xTypMZGCGTDSC-IcMkf/exec';
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const sheetUrl = document.getElementById('sheetUrl').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            const btnText = document.getElementById('btnText');
+            const resultDiv = document.getElementById('resultMessage');
+
+            if (!email || !email.includes('@')) {
+                showResult('يرجى إدخال بريد إلكتروني صحيح', 'error');
+                document.getElementById('email').focus();
+                return;
+            }
+
+            submitBtn.disabled = true;
+            spinner.style.display = 'block';
+            btnText.textContent = 'جارِ التسجيل...';
+            resultDiv.style.display = 'none';
+
+            if (isIOS) {
+                submitViaRedirect(email, sheetUrl);
+            } else {
+                submitViaFetch(email, sheetUrl);
+            }
+        });
+
+        function submitViaRedirect(email, sheetUrl) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = WEB_APP_URL;
+            form.target = '_self';
+
+            const emailInput = document.createElement('input');
+            emailInput.type = 'hidden';
+            emailInput.name = 'email';
+            emailInput.value = email;
+            form.appendChild(emailInput);
+
+            const sheetInput = document.createElement('input');
+            sheetInput.type = 'hidden';
+            sheetInput.name = 'sheetUrl';
+            sheetInput.value = sheetUrl || '';
+            form.appendChild(sheetInput);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        function submitViaFetch(email, sheetUrl) {
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ email: email, sheetUrl: sheetUrl })
+            })
+                .then(function () {
+                    handleSuccess('✅ تم التسجيل بنجاح! تحقق من بريدك.');
+                })
+                .catch(function (error) {
+                    handleError(error);
+                });
+        }
+
+        function handleSuccess(result) {
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            const btnText = document.getElementById('btnText');
+
+            spinner.style.display = 'none';
+
+            if (result && result.includes && result.includes('❌')) {
+                showResult(result, 'error');
+                submitBtn.disabled = false;
+                btnText.textContent = 'ابدأ التجربة المجانية';
+            } else {
+                showResult('✅ تم التسجيل بنجاح! تحقق من بريدك.', 'success');
+                btnText.textContent = 'تم بنجاح!';
+                submitBtn.style.background = 'var(--success)';
+            }
+        }
+
+        function handleError(error) {
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            const btnText = document.getElementById('btnText');
+
+            spinner.style.display = 'none';
+            submitBtn.disabled = false;
+            btnText.textContent = 'ابدأ التجربة المجانية';
+            showResult('حدث خطأ في الاتصال', 'error');
+        }
+
+        function showResult(message, type) {
+            const resultDiv = document.getElementById('resultMessage');
+            resultDiv.textContent = message;
+            resultDiv.className = 'result-message ' + type;
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

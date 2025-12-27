@@ -33,6 +33,7 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWD7VP6qe3se1Vpnt7OgrTc_JjKup3BGnnEVb7Zi1l0C6LvA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
                 className="gradient-primary text-primary-foreground hover:opacity-90 transition-opacity text-lg px-8 py-6"
@@ -40,6 +41,7 @@ const Hero = () => {
                 ابدأ 7 أيام مجاناً
                 <ArrowLeft className="w-5 h-5 mr-2" />
               </Button>
+            </a>
               <Button 
                 size="lg" 
                 variant="outline" 

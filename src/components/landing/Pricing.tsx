@@ -101,17 +101,19 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <Button
-                className={`w-full ${
-                  plan.popular
-                    ? "gradient-primary text-primary-foreground hover:opacity-90"
-                    : ""
-                }`}
-                variant={plan.popular ? "default" : "outline"}
-                size="lg"
-              >
-                ابدأ تجربتك المجانية
-              </Button>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWD7VP6qe3se1Vpnt7OgrTc_JjKup3BGnnEVb7Zi1l0C6LvA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                <Button
+                  className={`w-full ${
+                    plan.popular
+                      ? "gradient-primary text-primary-foreground hover:opacity-90"
+                      : ""
+                  }`}
+                  variant={plan.popular ? "default" : "outline"}
+                  size="lg"
+                >
+                  ابدأ تجربتك المجانية
+                </Button>
+              </a>
             </div>
           ))}
         </div>

@@ -61,7 +61,7 @@ const Contact = () => {
               <Button
                 size="lg"
                 className="w-full bg-green-500 hover:bg-green-600 text-white"
-                onClick={() => window.open("https://wa.me/218XXXXXXXXX", "_blank")}
+                onClick={() => window.open("https://wa.me/218920546132", "_blank")}
               >
                 <MessageCircle className="w-5 h-5 ml-2" />
                 ابدأ محادثة واتساب
@@ -87,7 +87,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">رقم الهاتف</p>
-                    <p className="font-medium" dir="ltr">+218 91 XXX XXXX</p>
+                    <p className="font-medium" dir="ltr">+218 920 546 132</p>
                   </div>
                 </div>
               </div>
