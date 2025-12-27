@@ -398,3 +398,134 @@
                     </label>
                     <div class="input-wrapper">
                         <span class="icon">🔗</span>
+                        <input type="url" id="sheetUrl" name="sheetUrl"
+                            placeholder="https://docs.google.com/spreadsheets/d/...">
+                    </div>
+                    <div class="warning-box">
+                        <strong>⚠️ ملاحظة:</strong>
+                        إذا أضفت شيت، شاركه مع: <code>madi4bsns@gmail.com</code>
+                    </div>
+                </div>
+
+                <div id="resultMessage" class="result-message" role="alert"></div>
+
+                <button type="submit" id="submitBtn">
+                    <span class="spinner" id="spinner"></span>
+                    <span id="btnText">ابدأ التجربة المجانية</span>
+                </button>
+            </form>
+
+            <p class="trial-notice">
+                بعد انتهاء الـ 7 أيام، ستحتاج للاشتراك لمتابعة الخدمة.
+            </p>
+        </div>
+    </main>
+
+    <script>
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbywqpPESgQkIEHxGJgYe_y-nNXrKczfK3oVb-9PSWwsPgJO8xTypMZGCGTDSC-IcMkf/exec';
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const sheetUrl = document.getElementById('sheetUrl').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            const btnText = document.getElementById('btnText');
+            const resultDiv = document.getElementById('resultMessage');
+
+            if (!email || !email.includes('@')) {
+                showResult('يرجى إدخال بريد إلكتروني صحيح', 'error');
+                document.getElementById('email').focus();
+                return;
+            }
+
+            submitBtn.disabled = true;
+            spinner.style.display = 'block';
+            btnText.textContent = 'جارِ التسجيل...';
+            resultDiv.style.display = 'none';
+
+            if (isIOS) {
+                submitViaRedirect(email, sheetUrl);
+            } else {
+                submitViaFetch(email, sheetUrl);
+            }
+        });
+
+        function submitViaRedirect(email, sheetUrl) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = WEB_APP_URL;
+            form.target = '_self';
+
+            const emailInput = document.createElement('input');
+            emailInput.type = 'hidden';
+            emailInput.name = 'email';
+            emailInput.value = email;
+            form.appendChild(emailInput);
+
+            const sheetInput = document.createElement('input');
+            sheetInput.type = 'hidden';
+            sheetInput.name = 'sheetUrl';
+            sheetInput.value = sheetUrl || '';
+            form.appendChild(sheetInput);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        function submitViaFetch(email, sheetUrl) {
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ email: email, sheetUrl: sheetUrl })
+            })
+                .then(function () {
+                    handleSuccess('✅ تم التسجيل بنجاح! تحقق من بريدك.');
+                })
+                .catch(function (error) {
+                    handleError(error);
+                });
+        }
+
+        function handleSuccess(result) {
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            const btnText = document.getElementById('btnText');
+
+            spinner.style.display = 'none';
+
+            if (result && result.includes && result.includes('❌')) {
+                showResult(result, 'error');
+                submitBtn.disabled = false;
+                btnText.textContent = 'ابدأ التجربة المجانية';
+            } else {
+                showResult('✅ تم التسجيل بنجاح! تحقق من بريدك.', 'success');
+                btnText.textContent = 'تم بنجاح!';
+                submitBtn.style.background = 'var(--success)';
+            }
+        }
+
+        function handleError(error) {
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            const btnText = document.getElementById('btnText');
+
+            spinner.style.display = 'none';
+            submitBtn.disabled = false;
+            btnText.textContent = 'ابدأ التجربة المجانية';
+            showResult('حدث خطأ في الاتصال', 'error');
+        }
+
+        function showResult(message, type) {
+            const resultDiv = document.getElementById('resultMessage');
+            resultDiv.textContent = message;
+            resultDiv.className = 'result-message ' + type;
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
